@@ -90,6 +90,8 @@ Then perform the following steps:
 4. ```cd ../home/workspace/clevr-hans-dataset-gen/image_generation/```
 5. ```./run_scripts/run_conf_3.sh```
 
+The default output location is ```src/clevr-hans-dataset-gen/output/``` and is specified in the run shell script.
+
 ### Note:
 
 Due to compatibility issues with the original CLEVR blender script and nvidia versions we reverted to creating the 
