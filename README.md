@@ -4,7 +4,7 @@ Repository for the CLEVR-Hans3 and CLEVR-Hans7 data set introduced in
 Explanations](https://arxiv.org/pdf/2011.12854.pdf) by Wolfgang Stammer, Patrick Schramowski, 
 Kristian Kersting, to be published at CVPR 2021.
 
-### General description
+## General description
 Using the available framework of [CLEVR: A Diagnostic Dataset for
 Compositional Language and Elementary Visual Reasoning](https://cs.stanford.edu/people/jcjohns/clevr/)[[1]](#1), 
 we have created a confounded data set, which we refer to as the CLEVR-Hans data set. This data set consists of CLEVR 
@@ -25,21 +25,27 @@ Finally, the images were created such that the exact combinations of the class r
 classes. It is possible that a subset of objects from one class rule occur in an image of another class. However, it 
 is not possible that more than one complete class rule is contained in an image.
 
-### Download
+## Download
 
-##### CLEVR-Hans3 (~ 2.4 GB):
+#### CLEVR-Hans3 (~ 2.4 GB):
 
 ```
 wget https://tudatalib.ulb.tu-darmstadt.de/bitstream/handle/tudatalib/2611/CLEVR-Hans3.zip
 ``` 
+```
+unzip CLEVR-Hans3.zip
+```
 
-##### CLEVR-Hans7 (~ 5.5 GB):
+#### CLEVR-Hans7 (~ 5.5 GB):
 
 ```
 wget https://tudatalib.ulb.tu-darmstadt.de/bitstream/handle/tudatalib/2618/CLEVR-Hans7.zip
 ```
+```
+unzip CLEVR-Hans7.zip
+```
 
-### CLEVR-Hans3
+## CLEVR-Hans3
 
 ![CLEVR-Hans3 overview](./figures/CLEVR-Hans3.png)
 
@@ -51,7 +57,7 @@ training and validation set images, however, can be made of either rubber or met
 third class contain a large blue sphere and a small yellow sphere in all images of the data set. This class is not 
 confounded.
 
-### CLEVR-Hans7
+## CLEVR-Hans7
 
 ![CLEVR-Hans7 overview](./figures/CLEVR-Hans7.png)
 
@@ -66,18 +72,20 @@ half of the image (class rule 5b). Within all data splits, including the test sp
 time and class rule 5b 10% of the time. The class rule of the sixth class is contained in class rule 5b, namely three 
 metal cylinders in the right half of the image. This is the same for all splits.
 
-### Instructions for generating CLEVR-Hans
+## Instructions for generating CLEVR-Hans
 
 The file ```src/clevr-hans-dataset-gen/image_generation/run_scripts/run_conf_3.sh``` contains the bash script to 
-generate CLEVR-Hans3 images as specified by the in script parameters. Important: the class rules are in two separate 
-.json files for the non-confounded test set and confounded validation an train set. 
+generate CLEVR-Hans3 images as specified by the in-script parameters. 
+
+Important: the class rules are in two separate 
+.json files for the non-confounded test set and confounded validation and train set. 
 ```src/clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_ConfClasses_3.json``` and 
 ```src/clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_GTClasses_3.json``` show examples of how to specify these
 for CLEVR-Hans3 (```src/clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_ConfClasses_7.json``` and 
 ```src/clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_GTClasses_7.json``` for the more complicated rules of 
 CLEVR-Hans7).
 
-In order to generate your own dataset, please generate your own .json files based on the mentioned examples and specify 
+In order to generate your own dataset, please create your own .json files based on the mentioned examples and specify 
 the locations of the .json files at the correct parameter name in 
 ```src/clevr-hans-dataset-gen/image_generation/run_scripts/run_conf_3.sh```. We suggest renaming the files from conf_3 
 to your own specification needs.   
@@ -94,12 +102,12 @@ The default output location is ```src/clevr-hans-dataset-gen/output/``` and is s
 
 ### Note:
 
-Due to compatibility issues with the original CLEVR blender script and nvidia versions we reverted to creating the 
+Due to compatibility issues with the original CLEVR Blender script and nvidia versions we reverted to creating the 
 images on the CPU in parallel processes. This is obviously a sub-optimal hack was the quickest fix. 
 Feel free to optimise. 
 
-### Citation
-If you find this code useful in your research, please consider citing:
+## Citation
+If you find this dataset useful in your research, please consider citing:
 
 > @article{stammer2020right,
   title={Right for the Right Concept: Revising Neuro-Symbolic Concepts by Interacting with their Explanations},
