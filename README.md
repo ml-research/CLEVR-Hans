@@ -31,8 +31,6 @@ is not possible that more than one complete class rule is contained in an image.
 
 ```
 wget https://tudatalib.ulb.tu-darmstadt.de/bitstream/handle/tudatalib/2611/CLEVR-Hans3.zip
-``` 
-```
 unzip CLEVR-Hans3.zip
 ```
 
@@ -40,8 +38,6 @@ unzip CLEVR-Hans3.zip
 
 ```
 wget https://tudatalib.ulb.tu-darmstadt.de/bitstream/handle/tudatalib/2618/CLEVR-Hans7.zip
-```
-```
 unzip CLEVR-Hans7.zip
 ```
 
@@ -79,15 +75,27 @@ generate CLEVR-Hans3 images as specified by the in-script parameters.
 
 Important: the class rules are in two separate 
 .json files for the non-confounded test set and confounded validation and train set. 
+
 ```src/clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_ConfClasses_3.json``` and 
-```src/clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_GTClasses_3.json``` show examples of how to specify these
-for CLEVR-Hans3 (```src/clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_ConfClasses_7.json``` and 
-```src/clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_GTClasses_7.json``` for the more complicated rules of 
+
+```src/clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_GTClasses_3.json``` 
+
+show examples of how to specify these
+for CLEVR-Hans3 
+
+(```src/clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_ConfClasses_7.json``` and
+ 
+```src/clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_GTClasses_7.json``` 
+
+for the more complicated rules of 
 CLEVR-Hans7).
 
 In order to generate your own dataset, please create your own .json files based on the mentioned examples and specify 
 the locations of the .json files at the correct parameter name in 
-```src/clevr-hans-dataset-gen/image_generation/run_scripts/run_conf_3.sh```. We suggest renaming the files from conf_3 
+
+```src/clevr-hans-dataset-gen/image_generation/run_scripts/run_conf_3.sh```. 
+
+We suggest renaming the files from conf_3 
 to your own specification needs.   
 
 Then perform the following steps:
@@ -106,6 +114,12 @@ Due to compatibility issues with the original CLEVR Blender script and nvidia ve
 images on the CPU in parallel processes. This is obviously a sub-optimal hack was the quickest fix. 
 Feel free to optimise. 
 
+## References
+<a id="1">[1]</a> 
+Johnson, J., Hariharan, B., Van Der Maaten, L., Fei-Fei, L., Lawrence Zitnick, C., & Girshick, R. (2017). 
+Clevr: A diagnostic dataset for compositional language and elementary visual reasoning. 
+In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (pp. 2901-2910).
+
 ## Citation
 If you find this dataset useful in your research, please consider citing:
 
@@ -115,9 +129,3 @@ If you find this dataset useful in your research, please consider citing:
   journal={arXiv preprint arXiv:2011.12854},
   year={2020}
 }
-
-## References
-<a id="1">[1]</a> 
-Johnson, J., Hariharan, B., Van Der Maaten, L., Fei-Fei, L., Lawrence Zitnick, C., & Girshick, R. (2017). 
-Clevr: A diagnostic dataset for compositional language and elementary visual reasoning. 
-In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (pp. 2901-2910).
