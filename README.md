@@ -6,7 +6,7 @@ Kristian Kersting, to be published at CVPR 2021.
 
 ## General description
 Using the available framework of [CLEVR: A Diagnostic Dataset for
-Compositional Language and Elementary Visual Reasoning](https://cs.stanford.edu/people/jcjohns/clevr/)[[1]](#1), 
+Compositional Language and Elementary Visual Reasoning](https://cs.stanford.edu/people/jcjohns/clevr/) [[1]](#1), 
 we have created a confounded data set, which we refer to as the CLEVR-Hans data set. This data set consists of CLEVR 
 images divided into several classes. The membership of a class is based on combinations of objects’ attributes and 
 relations. Additionally, certain classes within the data set are confounded.  Thus, within the data set, consisting of 
@@ -70,22 +70,22 @@ metal cylinders in the right half of the image. This is the same for all splits.
 
 ## Instructions for generating CLEVR-Hans
 
-The file ```src/clevr-hans-dataset-gen/image_generation/run_scripts/run_conf_3.sh``` contains the bash script to 
+The file ```clevr-hans-dataset-gen/image_generation/run_scripts/run_conf_3.sh``` contains the bash script to 
 generate CLEVR-Hans3 images as specified by the in-script parameters. 
 
 Important: the class rules are in two separate 
 .json files for the non-confounded test set and confounded validation and train set. 
 
-```src/clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_ConfClasses_3.json``` and 
+```clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_ConfClasses_3.json``` and 
 
-```src/clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_GTClasses_3.json``` 
+```clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_GTClasses_3.json``` 
 
 show examples of how to specify these
 for CLEVR-Hans3 
 
-(```src/clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_ConfClasses_7.json``` and
+(```clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_ConfClasses_7.json``` and
  
-```src/clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_GTClasses_7.json``` 
+```clevr-hans-dataset-gen/image_generation/data/Clevr_Hans_GTClasses_7.json``` 
 
 for the more complicated rules of 
 CLEVR-Hans7).
@@ -93,20 +93,20 @@ CLEVR-Hans7).
 In order to generate your own dataset, please create your own .json files based on the mentioned examples and specify 
 the locations of the .json files at the correct parameter name in 
 
-```src/clevr-hans-dataset-gen/image_generation/run_scripts/run_conf_3.sh```. 
+```clevr-hans-dataset-gen/image_generation/run_scripts/run_conf_3.sh```. 
 
 We suggest renaming the files from conf_3 
 to your own specification needs.   
 
 Then perform the following steps:
 
-1. ```cd into src/clevr-hans-dataset-gen/docker/ folder```
+1. ```cd into clevr-hans-dataset-gen/docker/ folder```
 2. ```docker build -t xil_clevr_hans -f Dockerfile .```
 3. ```docker run -it -v /pathto/clevr-hans-dataset-gen:/home/workspace/clevr-hans-dataset-gen --name clevr_hans --entrypoint='/bin/bash' blender_python_clevr```
 4. ```cd ../home/workspace/clevr-hans-dataset-gen/image_generation/```
 5. ```./run_scripts/run_conf_3.sh```
 
-The default output location is ```src/clevr-hans-dataset-gen/output/``` and is specified in the run shell script.
+The default output location is ```clevr-hans-dataset-gen/output/``` and is specified in the run shell script.
 
 ### Note:
 
