@@ -100,7 +100,7 @@ to your own specification needs.
 
 Then perform the following steps:
 
-1. ```cd into clevr-hans-dataset-gen/docker/ folder```
+1. ```cd clevr-hans-dataset-gen/docker/```
 2. ```docker build -t clevr_hans -f Dockerfile .```
 3. ```docker run -it -v /localpathto/clevr-hans-dataset-gen:/home/workspace/clevr-hans-dataset-gen --name clevr_hans --entrypoint='/bin/bash' --user $(id -u):$(id -g) clevr_hans```
 4. ```cd ../home/workspace/clevr-hans-dataset-gen/image_generation/```
