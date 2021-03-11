@@ -3,9 +3,9 @@
 blender=/usr/bin/blender-2.78c-linux-glibc219-x86_64/blender
 
 #----------------------------------------------------------#
-NUM_TRAIN_SAMPLES=3000
-NUM_VAL_SAMPLES=750
-NUM_TEST_SAMPLES=750
+NUM_TRAIN_SAMPLES=3
+NUM_VAL_SAMPLES=2
+NUM_TEST_SAMPLES=2
 
 NUM_PARALLEL_THREADS=5
 NUM_THREADS=4
